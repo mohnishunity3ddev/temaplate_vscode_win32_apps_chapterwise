@@ -75,3 +75,5 @@ include_directories(common)
 # Include Common SharedUtils
 add_subdirectory(common)
 add_subdirectory(src/Chapter01/01_test_project)
+add_subdirectory(src/Chapter01/02_Second_test_project)
+add_subdirectory(src/Chapter01/03.Test_Another_Project)

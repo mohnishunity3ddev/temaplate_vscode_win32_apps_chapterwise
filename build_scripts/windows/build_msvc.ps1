@@ -7,18 +7,20 @@
 
 Write-Alert "#####Configuring MSVC ..."
 $arg = $args[0]
-$build = 0
-if([bool]$arg) {
-    if(($arg -eq "b") -or ($arg -eq "build") -or ($arg -eq "force") -or ($arg -eq "f")) {
-        $build = 1
-    }
-}
+$build = 1
+# if([bool]$arg) {
+#     $build = 1
+#     # if(($arg -eq "b") -or ($arg -eq "build") -or ($arg -eq "force") -or ($arg -eq "f")) {
+#     #     $build = 1
+#     # }
+# }
 
 Invoke-Expression "& cmake -S '$PROJECT_ROOT_DIR_PATH' -B '$BIN_DIR_PATH'"
 
 if($?) {
     if($build -eq 1) {
         Write-Alert "#####Building All MSVC Projects ..."
+        Write-Alert "$BIN_DIR_PATH\$PROJECT_NAME.sln"
         Invoke-Expression "& MSBuild.exe '$BIN_DIR_PATH\$PROJECT_NAME.sln' "
         
         if($?) {

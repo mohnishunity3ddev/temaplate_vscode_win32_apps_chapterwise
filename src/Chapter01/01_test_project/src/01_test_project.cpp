@@ -8,5 +8,6 @@ wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine,
 {
     OutputDebugStringA("Hello, World!\n");
     OutputDebugStringA("Hello, World AGAIN!\n");
+    OutputDebugStringA("Only works in vsStudio for now! :(\n");
     int x = 0;
 }
